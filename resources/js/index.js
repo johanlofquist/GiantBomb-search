@@ -14,7 +14,7 @@ async function getData() {
     cors: "no-cors",
   });
   const data = await response.json();
-  console.log(data);
+  console.log(link);
 
   for (let i = 0; i < data.results.length; i++) {
     let gameContainer = document.createElement("div");
@@ -33,7 +33,16 @@ async function getData() {
     gamePlatforms.classList = "game__platforms";
 
     gameImg.src = data.results[i].image.original_url;
-    gameName.innerText = data.results[i].name
+    gameName.innerText = data.results[i].name;
+    gameDescription.innerText = data.results[i].deck;
+    gameRelease.innerText =
+      "Release date: " + data.results[i].original_release_date;
+    let platformsString = "Platforms: ";
+    for (let r = 0; r < data.results[i].platforms.length; r++) {
+      platformsString += data.results[i].platforms[r].name + ", ";
+    }
+    platformsString = platformsString.slice(0, -2);
+    gamePlatforms.innerText = platformsString;
 
     mainGameContainer.append(gameContainer);
     gameContainer.append(gameImg, gameTextContainer);
