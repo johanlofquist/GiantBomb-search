@@ -6,6 +6,8 @@
 
 body {
   background-color: #262626;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 #header {
@@ -27,7 +29,7 @@ body {
   left: 10px;
   transform: rotate(-10deg);
   color: white;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   font-weight: 400;
   font-size: 70px;
   text-shadow: 0px 0px 5px #eb1f25;
@@ -35,14 +37,49 @@ body {
 }
 
 #input__container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 10px;
 }
 
 #input__container input {
-    padding: 8px 16px;
-    border-radius: 10px;
-    border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+}
+
+#main__game__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.game__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.game__img {
+  height: 200px;
+  aspect-ratio: 4:3;
+}
+
+.game__text__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.game__name {
+}
+
+.game__description {
+}
+
+.game__release {
+
+}
+
+.game__platforms{
+
 }
