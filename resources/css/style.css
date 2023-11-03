@@ -51,10 +51,42 @@ body {
   border: none;
 }
 
+#go__btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #eb1f25;
+  color: white;
+}
+
 #main__game__container {
   display: flex;
   flex-direction: column;
   margin: 40px 0;
+}
+
+#loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #f3f3f3;
+  margin: 0 auto;
+  animation: spin 2s linear infinite;
+  border-top: 5px solid darkgrey;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#sorry__text {
+  display: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 50px;
 }
 
 .game__container {
