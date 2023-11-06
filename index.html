@@ -11,14 +11,22 @@
     <div id="header">
       <img id="logo" src="resources/img/GBlogo.webp" />
       <p id="logo__search">SEARCH!</p>
+      <p id="header__text">
+        Looking for a videogame or a videogame character? If it's not here it
+        probably doesn't exist!
+      </p>
     </div>
     <div id="input__container">
-      <input id="input__field" type="text" placeholder="Videogame"/>
+      <input id="input__field" type="text" placeholder="Videogame" />
+      <select id="resource__select">
+        <option value="game">game</option>
+        <option value="character">character</option>
+      </select>
       <button id="go__btn">GO!</button>
     </div>
     <p id="sorry__text"></p>
-    <div id="main__game__container"></div>
     <div id="loader"></div>
+    <div id="main__game__container"></div>
     <script src="resources/js/index.js"></script>
   </body>
 </html>
