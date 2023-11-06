@@ -29,7 +29,7 @@ async function getData() {
   } else {
     mainGameContainer.innerHTML = "";
     sorryEl.style.display = "none";
-    let link = `https://corsproxy.io/?https://www.giantbomb.com/api/search/?api_key=3fe3d85dfed048a636b145709d6402eae063a7c0&format=json&query=%22${inputFieldEl.value}%22&resources=${resourceType}&page=${pageNr}`;
+    let link = `https://corsproxy.io/?https://www.giantbomb.com/api/search/?api_key=3fe3d85dfed048a636b145709d6402eae063a7c0&format=json&query=%22${encodeURIComponent(inputFieldEl.value)}%22&resources=${resourceType}&page=${pageNr}`;
 
     console.log(link);
     loaderEl.style.display = "block";
@@ -109,12 +109,14 @@ async function getData() {
         if (resourceType === "game") {
           gameRelease.innerText =
             "Release date: " + data.results[i].original_release_date;
-          let platformsString = "Platforms: ";
-          for (let r = 0; r < data.results[i].platforms.length; r++) {
-            platformsString += data.results[i].platforms[r].name + ", ";
+          if (data.results[i].platforms) {
+            let platformsString = "Platforms: ";
+            for (let r = 0; r < data.results[i].platforms.length; r++) {
+              platformsString += data.results[i].platforms[r].name + ", ";
+            }
+            platformsString = platformsString.slice(0, -2);
+            gamePlatforms.innerText = platformsString;
           }
-          platformsString = platformsString.slice(0, -2);
-          gamePlatforms.innerText = platformsString;
         }
 
         mainGameContainer.append(gameContainer);
