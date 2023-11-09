@@ -102,24 +102,25 @@ button:hover {
   }
 }
 
-#sorry__text {
+#error__text {
   display: none;
   text-align: center;
   color: white;
   font-size: 20px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .paginator__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 .paginator__text {
   color: white;
   text-align: center;
+  margin: 0;
 }
 
 .paginator__btn {
@@ -142,10 +143,6 @@ button:hover {
   max-height: 300px;
   max-width: 300px;
   border: 2px solid white;
-}
-
-.game__img:hover ~ body {
-  background-color: green; /* Önskad bakgrundsfärg för body när .game__img hovras över */
 }
 
 .game__text__container {
